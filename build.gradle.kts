@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.9.10"
+    kotlin("jvm") version "1.9.20"
 }
 
 group = "org.example"
@@ -11,12 +11,10 @@ repositories {
 
 dependencies {
 
-    implementation("org.jetbrains.kotlin:kotlin-compiler-embeddable:1.9.10")
+    implementation("org.jetbrains.kotlin:kotlin-compiler-embeddable:1.9.20")
 
-//    testImplementation("com.github.tschuchortdev:kotlin-compile-testing:1.5.0")
-    testImplementation(fileTree("libs",){
-        include("*.jar")
-    })
+    testImplementation("dev.zacsweers.kctfork:core:0.4.0")
+
     testImplementation(kotlin("test"))
 }
 
@@ -25,5 +23,5 @@ tasks.test {
 }
 
 kotlin {
-    jvmToolchain(8)
+    jvmToolchain(17)
 }
